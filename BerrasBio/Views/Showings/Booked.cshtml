@@ -1,0 +1,54 @@
+﻿@model BerrasBio.Models.Showing
+
+@{
+    ViewData["Title"] = "Booked";
+}
+
+<body class="bookedPage">
+
+    <h3>Confirm Book - @ViewData["DateToDay"]</h3>
+
+    <hr />
+
+    <div>
+        <h3>@Html.DisplayFor(model => model.Movie.Title)</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                Start
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+            <dt>
+                Lounge
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lounge.ID)
+            </dd>
+            <dt>
+                Tickets
+            </dt>
+            <dd>
+                @ViewBag.NrOfTIckets
+            </dd>
+            <dt>
+                Ticket price
+            </dt>
+            <dd>
+                @ViewData["TicketPrice"] Sek
+            </dd>
+            <dt>
+                Total ticket price
+            </dt>
+            <dd>
+                @ViewData["TotalTicketPrice"] Sek
+            </dd>
+        </dl>
+    </div>
+
+
+
+    <div>
+        <a asp-action="Index">Back to Movie List</a>
+    </div>
+    </body>

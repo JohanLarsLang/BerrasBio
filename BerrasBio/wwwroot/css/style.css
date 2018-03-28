@@ -1,0 +1,106 @@
+﻿.startPage {
+    background-image: url("/images/cinema-background.jpg");
+}
+
+nav img {
+    height: 25%;
+    margin: 10px 0px 10px 10px;
+    float: left;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px lightblue;
+}
+
+.headerTitle {
+    float: left;
+    font: bold 1.6em calibri;
+    font-size: 30px;
+    color: #154360;
+    margin: 10px 0px 0px 30px;
+    text-shadow: 17px 17px #0066FF;
+}
+
+.container{
+    padding-top: 25px;
+}
+
+
+.moviePage {
+    background-color: lightblue;
+}
+
+.infoPage {
+    background-color: lightsalmon;
+}
+
+.bookPage {
+    background-color: lightpink;
+}
+
+.bookedPage {
+    background-color: lightgreen;
+}
+
+.moviePage, .bookPage, .bookedPage, .infoPage {
+    position: absolute;
+    width: auto;
+    height: 50px;
+    top: 10%;
+    left: 5%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+}
+
+.movieInfo {
+    color: green;
+    font-weight: bold;
+}
+
+.movieBooked {
+    color: grey;
+ }
+
+.navbar-footer {
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        color: whitesmoke;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.welcome {
+    color: #807c7c;
+    position: absolute;
+    width: auto;
+    height: 50px;
+    top: 25%;
+    left: 30%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+}
+
+ .welcome a {
+        color: #807c7c;
+        text-decoration: none;
+        padding: 0 10px;
+        font-size: 1.6em;
+        text-transform: uppercase;
+ }
+
+    .welcome a:hover, .welcome h2:hover {
+        color: whitesmoke;
+        transition: 1s color, 1s letter-spacing, 1s margin-left, 1s font-size;
+        letter-spacing: .2em;
+        margin-left: 20px;
+        font-size: 2em;
+    }
+

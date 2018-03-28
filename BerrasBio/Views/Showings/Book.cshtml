@@ -1,0 +1,64 @@
+﻿@model BerrasBio.Models.Showing
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+<body class="bookPage">
+
+    <h3>Book today: @ViewData["DateToDay"]</h3>
+
+    <hr />
+
+    <div>
+        <h3>@Html.DisplayFor(model => model.Movie.Title)</h3>
+        <dl class="dl-horizontal">
+            <dt>
+                Start
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+            <dt>
+                Lounge
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lounge.ID)
+            </dd>
+            <dt>
+                Seats left
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SeatsLeft)
+
+            </dd>
+            <dt>
+                Ticket price
+            </dt>
+            <dd>
+                @ViewData["TicketPrice"] Sek
+            </dd>
+            <dt>
+                Tickets (max 12)
+            </dt>
+            <dd>
+
+                @using (Html.BeginForm("Book"))
+        {
+            <input type="number" name="nrOfTickets" min="1" max=@ViewBag.SeatsLeft value="1" />
+            <input type="submit" value="Book now" />
+}
+            </dd>
+        </dl>
+    </div>
+
+
+
+    <div>
+        <a asp-action="Index">Back to Movie List</a>
+    </div>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

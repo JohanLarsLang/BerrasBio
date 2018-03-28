@@ -1,0 +1,75 @@
+﻿@model BerrasBio.Models.Showing
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<body class="infoPage">
+
+    <h3>Movie Information - @ViewData["DateToDay"]</h3>
+
+    <hr />
+
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                Movie title
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Movie.Title)
+            </dd>
+            <dt>
+                Movie info
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Movie.Info)
+            </dd>
+            <dt>
+                Start
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+            <dt>
+                Timespan
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Movie.TimeSpan)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Lounge)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lounge.ID)
+            </dd>
+            <dt>
+                Lounge info
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lounge.Info)
+            </dd>
+            <dt>
+                Seats
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lounge.NrOfSeat)
+            </dd>
+            <dt>
+                Seats left
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SeatsLeft)
+            </dd>
+            <dt>
+                Ticket price
+            </dt>
+            <dd>
+                @ViewData["TicketPrice"] Sek
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </body>
