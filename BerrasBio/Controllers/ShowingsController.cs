@@ -24,7 +24,8 @@ namespace BerrasBio.Controllers
             ViewData["StartSortParm"] = sortOrder == "Time" ? "time_desc" : "Time";
             ViewData["MovieTitleSortParm"] = String.IsNullOrEmpty(sortOrder) ? "movietitle_desc" : "";
             ViewData["TimespanSortParm"] = sortOrder == "Timespan" ? "timespan_desc" : "Timespan";
-            ViewData["LoungeNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "loungename_desc" : "";
+            ViewData["LoungeSortParm"] = sortOrder == "LoungeID" ? "lounge_desc" : "LoungeID";
+            ViewData["SeatsSortParm"] = sortOrder == "Seats" ? "seat_desc" : "Seats";
             ViewData["SeatsLeftSortParm"] = sortOrder == "SeatsLeft" ? "seatleft_desc" : "SeatsLeft";
 
             DateTime today = DateTime.Today;
@@ -57,11 +58,23 @@ namespace BerrasBio.Controllers
                     showings = showings.OrderByDescending(s => s.Movie.TimeSpan);
                     break;
 
-                case "loungename_desc":
+                case "LoungeID":
                     showings = showings.OrderBy(s => s.LoungeID);
                     break;
 
-                case "SeatsLeft":
+                case "lounge_desc":
+                    showings = showings.OrderBy(s => s.LoungeID);
+                    break;
+
+                case "Seats":
+                    showings = showings.OrderByDescending(s => s.Lounge.NrOfSeat);
+                    break;
+
+                case "seats_desc":
+                    showings = showings.OrderByDescending(s => s.Lounge.NrOfSeat);
+                    break;
+
+               case "SeatsLeft":
                     showings = showings.OrderByDescending(s => s.SeatsLeft);
                     break;
 

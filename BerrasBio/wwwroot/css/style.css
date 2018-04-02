@@ -1,9 +1,10 @@
 ﻿.startPage {
     background-image: url("/images/cinema-background.jpg");
+
 }
 
 nav img {
-    height: 25%;
+    height: 120px;
     margin: 10px 0px 10px 10px;
     float: left;
     border-radius: 25px;
@@ -21,7 +22,7 @@ nav img {
 
 .container{
     padding-top: 25px;
-}
+ }
 
 
 .moviePage {
@@ -86,21 +87,54 @@ a {
     left: 30%;
     margin-left: -50px; /* margin is -0.5 * dimension */
     margin-top: -25px;
+    font-weight: normal;
+    font-family: 'Comic Sans MS';
 }
 
- .welcome a {
+    .welcome a {
         color: #807c7c;
         text-decoration: none;
         padding: 0 10px;
         font-size: 1.6em;
         text-transform: uppercase;
- }
+        -moz-transition: 1s all;
+        -webkit-transition: 1s all;
+        -o-transition: 1s all;
+        transition: 1s all;
 
-    .welcome a:hover, .welcome h2:hover {
-        color: whitesmoke;
-        transition: 1s color, 1s letter-spacing, 1s margin-left, 1s font-size;
-        letter-spacing: .2em;
-        margin-left: 20px;
-        font-size: 2em;
     }
 
+        .welcome a:hover, .welcome h2:hover {
+            color: whitesmoke;
+            -moz-transition: 1s 1s color, 2s letter-spacing, 2s margin-left, 1s font-size ease;
+            -webkit-transition: 1s 1s color, 2s letter-spacing, 2s margin-left, 1s font-size ease;
+            -o-transition: 1s 1s color, 2s letter-spacing, 2s margin-left, 1s font-size ease;
+            transition: 1s 1s color, 2s letter-spacing, 2s margin-left, 1s font-size ease;
+            letter-spacing: .3em;
+            margin-left: 25px;
+            font-size: 2.6em;
+        }
+
+    .welcome span.additional {
+        opacity: 0;
+        display: block;
+        color: orange;
+        text-shadow: 1px 1px white;
+        font-size: 1.8em;
+        font-style: italic;
+        position: relative;
+        line-height: 1.2em;
+        -moz-transition: 3s all;
+        -webkit-transition: 3s all;
+        -o-transition: 3s all;
+        transition: 3s all;
+    }
+
+
+    .welcome a:hover + span.additional, .welcome h2:hover + span.additional {
+        opacity: 1;
+        -moz-transition: 3s opacity;
+        -webkit-transition: 3s opacity;
+        -o-transition: 3s opacity;
+        transition: 3s opacity;
+    }

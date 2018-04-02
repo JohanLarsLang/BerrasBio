@@ -13,22 +13,22 @@
         <thead>
             <tr>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]">Start</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]" title="Sort Start time">Start</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["MovieTitleSortParm"]">Movie title</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["MovieTitleSortParm"]" title="Sort Movie title">Movie title</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimespanSortParm"]">Timespan</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimespanSortParm"]" title="Sort timespan">Timespan</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["LoungeNameSortParm"]">Lounge</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["LoungeSortParm"]" title="sort lounge nr">Lounge</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["LoungeNameSortParm"]">Seats</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SeatsSortParm"]" title="Sort seats">Seats</a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SeatsLeftSortParm"]">Seats left</a>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SeatsLeftSortParm"]" title="Sort seats left">Seats left</a>
                 </th>
                 <th></th>
             </tr>
@@ -38,24 +38,24 @@
             {
                 <tr class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")">
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")"> @Html.DisplayFor(modelItem => item.StartTime)</a> 
+                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.StartTime)</a> 
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")"> @Html.DisplayFor(modelItem => item.Movie.Title)</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.Title)</a>
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")"> @Html.DisplayFor(modelItem => item.Movie.TimeSpan)</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Movie.TimeSpan)</a>
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")"> @Html.DisplayFor(modelItem => item.LoungeID)</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.LoungeID)</a>
                         
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")"> @Html.DisplayFor(modelItem => item.Lounge.NrOfSeat)</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.Lounge.NrOfSeat)</a>
                         
                     </td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")"> @Html.DisplayFor(modelItem => item.SeatsLeft)</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="@(item.SeatsLeft > 0 ? "movieInfo" : "movieBooked")" title="Details"> @Html.DisplayFor(modelItem => item.SeatsLeft)</a>
                         
                     </td>
 
@@ -65,7 +65,7 @@
 
                         @if (nrSeats > 0)
                         {
-                            <a asp-action="Book" asp-route-id="@item.ID">Book</a>
+                            <a asp-action="Book" asp-route-id="@item.ID" title="Book tickets">Book</a>
                         }
                         <!-- |
                         <a asp-action="Details" asp-route-id="@item.ID">Details</a>
